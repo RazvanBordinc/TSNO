@@ -6,7 +6,7 @@ This repository contains a `docker-compose.yml` file that orchestrates the entir
 - **Frontend (Next.js)**
 - **Backend (.NET Core Web API + SQL Server)**
 - **Database (SQL Server)**
-- 
+
 ![image](https://github.com/user-attachments/assets/f4ba380c-4f32-4b16-a52e-dfa8b7b06722)
 
 By using Docker Compose, you can launch all services with a single command, simplifying development and deployment.
@@ -28,6 +28,7 @@ By using Docker Compose, you can launch all services with a single command, simp
 ```bash
 docker-compose up -d
 ```
+**After the build, refresh the page at the given port, to make sure you get fresh data, not mockup data from the build**
 
 - **Frontend**: http://localhost:3000
 - **Backend**: http://localhost:8080
