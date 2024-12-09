@@ -1,0 +1,43 @@
+# @format
+
+networks:
+  tsno-network:
+    driver: bridge
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "HardPwToGuess32431@3"
+      ACCEPT_EULA: "Y"
+    networks:
+      - tsno-network
+
+  backend:
+    build:
+      context: ./TSNO-server/TSNO
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__DefaultConnection: "Server=db;Database=TSNODb;User=sa;Password=HardPwToGuess32431@3;Encrypt=True;TrustServerCertificate=True;"
+    depends_on:
+      - db
+    networks:
+      - tsno-network
+
+  frontend:
+    build:
+      context: ./TSNO-client/tsno
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_BACKEND_URL=http://localhost:8080
+      - INTERNAL_BACKEND_URL=http://backend:8080
+    depends_on:
+      - backend
+    networks:
+      - tsno-network
