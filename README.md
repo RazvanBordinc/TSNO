@@ -1,6 +1,9 @@
 
 # TSNO Docker-Compose
 
+# Project focus
+I created this project to quickly transfer snippets of text such as code segments from my phone to my university computer without any sign-ins. Unlike other services like Privnote, which require multiple confirmations and can feel laggy, this solution is faster, more modern, mobile-friendly, and completely ad-free.
+
 ## Overview
 This repository contains a `docker-compose.yml` file that orchestrates the entire TSNO application:
 - **Frontend (Next.js)**
