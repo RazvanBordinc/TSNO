@@ -6,6 +6,8 @@ This repository contains a `docker-compose.yml` file that orchestrates the entir
 - **Frontend (Next.js)**
 - **Backend (.NET Core Web API + SQL Server)**
 - **Database (SQL Server)**
+- 
+![image](https://github.com/user-attachments/assets/f4ba380c-4f32-4b16-a52e-dfa8b7b06722)
 
 By using Docker Compose, you can launch all services with a single command, simplifying development and deployment.
 
